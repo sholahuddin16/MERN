@@ -1,0 +1,95 @@
+Standar API
+
+{root.api}/v1/{version}/{grouping}/{endpoint}
+SAMPLE:
+http://mern-api-msservice.com/v1/auth/login
+
+Standar Status Response
+
+200 - OK                    --> Call API Success
+201 - Created               --> Post Success
+400 - BAD REQUEST           --> Error on Client Side (client salah input)
+401 - UNAUTHORIZED          --> User no authorized to the request.
+403 - FORBIDDEN             --> User not allowed to access.
+404 - NOT FOUND             --> Request Endpoint Not Found.
+500 - INTERNAL SERVER ERROR --> Error on Server Side
+502 - BAD GATEWAY           --> Invalid Response From Antoher Request
+
+GROUP Blog
+[POST] : [1] - Create Blog
+{root.api}/{version}/blog/Create
+
+req:
+{
+    "title" : "www"
+    "image" : "img.png"
+    "body" : "asdasd"  
+}
+
+res:
+{
+    "messege" : "Post Successfuly "
+    "data" : {
+        "post_id": 1,
+        "title": "www"
+        "image": "img"
+        "blog": "asdasd"
+        "Created_at": "10/03/2021 atau date"
+        "author": {
+            "uid": 11
+            "name": "mrr"
+        }
+    }
+}
+
+ 
+GROUP: Authentication
+
+[POST] : [1] - register
+{root.api}/{version}/auth/register
+
+req:  
+{
+    "name" : "testing",
+    "email" : "testing@gmaul.com"
+    "password" : 1234
+}
+
+res:
+{
+    "messege" : "Register Success"
+    "data" : {
+        "id": 1,
+        "name" : "testing",
+        "email" : "testing@gmaul.com"
+        "password" : 1234
+    }
+}
+
+err-response:
+404 - NOT FOUND             --> Request Endpoint Not Found.
+
+[2] - login
+{root.api}/{version}/auth/login
+
+req:
+{
+    "email" : "testing@gmaul.com"
+    "password" : 1234
+}
+
+res:
+{
+    "messege" : "Login Success"
+    "data": {
+        "email" : "testing@gmaul.com"
+        "password" : 1234
+    }
+}
+
+GROUP: Blog
+
+[1] - Create Blog Post
+[2] - Get Blog Post
+[3] - Update Blog Post
+[4] - Delete Blog Post
