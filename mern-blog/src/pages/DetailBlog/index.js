@@ -10,7 +10,7 @@ const DetailBlog = (props) => {
     useEffect(() => {
         console.log('params: ', props.match.params.id)
         const id = props.match.params.id
-        Axios.get(`http://192.168.1.5:4000/v1/blog/get/${id}`)
+        Axios.get(`http://localhost:4000/v1/blog/get/${id}`)
         .then(res => {
             console.log('success: ', res);
             setData(res.data.data)
@@ -25,7 +25,7 @@ const DetailBlog = (props) => {
             <div className="detail-blog-wrapper">
                 <p className="blog-title">{data.title}</p>
                 <p className="blog-author">{data.author.name} - {data.createdAt} </p>
-                <img className="img-cover" src={`http://192.168.1.5:4000/${data.image}`} alt="thumb" />
+                <img className="img-cover" src={`http://localhost:4000/${data.image}`} alt="thumb" />
                 <p className="blog-body">{data.body}</p>
                 <Gap height={20} />
                 <Link title="Kembali Ke Home" onClick={() => history.push('/')} />

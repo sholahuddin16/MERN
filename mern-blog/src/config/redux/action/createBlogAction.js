@@ -14,7 +14,7 @@ export const postToAPI = (form) => { //tambahkan parameter form untuk diisi di v
     data.append('body', form.body);
     data.append('image', form.image);
 
-    Axios.post('http://192.168.1.5:4000/v1/blog/post', data, {
+    Axios.post('http://localhost:4000/v1/blog/post', data, {
         headers: {
             'Content-Type': 'multipart/form-data'
         }
@@ -33,7 +33,7 @@ export const updateToAPI = (form, id) => {
     data.append('body', form.body);
     data.append('image', form.image);
 
-    Axios.put(`http://192.168.1.5:4000/v1/blog/post/${id}`, data, {
+    Axios.put(`http://localhost:4000/v1/blog/post/${id}`, data, {
         headers: {
             'Content-Type': 'multipart/form-data'
         }

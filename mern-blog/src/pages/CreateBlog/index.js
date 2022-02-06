@@ -25,13 +25,13 @@ const CreateBlog = (props) => {
         const id = props.match.params.id 
         if(id){
             setIsUpdate(true);
-            Axios.get(`http://192.168.1.5:4000/v1/blog/get/${id}`)
+            Axios.get(`http://localhost:4000/v1/blog/get/${id}`)
             .then(res => {
                 const data =  res.data.data;
                 console.log('res: ', data)
                 dispatch(setForm('title', data.title));
                 dispatch(setForm('body', data.body));
-                dispatch(setImgPreview(`http://192.168.1.5:4000/${data.image}`));
+                dispatch(setImgPreview(`http://localhost:4000/${data.image}`));
             })
             .catch(err => {
                 console.log('err: ', err)
@@ -46,7 +46,7 @@ const CreateBlog = (props) => {
             icon: 'success',
             title: 'Success',
             text: 'Success Post Blog!!!',
-            footer: '<a href="//192.168.1.5:3000">Go Home!!!</a>'
+            footer: '<a href="//localhost:3000">Go Home!!!</a>'
           }) 
         //console.log('image: ', image)
         const id = props.match.params.id

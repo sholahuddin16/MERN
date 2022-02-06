@@ -1,7 +1,7 @@
 import Axios from "axios";
 
 export const setDataBlog = (page) => (dispatch) => {     //(parameter) //versi pendek
-    Axios.get(`http://192.168.100.30:4000/v1/blog/get?page=${page}&perPage=4`) //versi pendek & sesuaikan dengan ip server
+    Axios.get(`http://localhost:4000/v1/blog/get?page=${page}&perPage=4`) //versi pendek & sesuaikan dengan ip server
         .then(result => {
             const responseAPI = result.data;
             console.log('data API : ', responseAPI);
