@@ -2,6 +2,7 @@ import React from 'react'
 //import { RegisterBG } from '../../../assets'
 import { Button } from '../../../components';
 import {useHistory} from 'react-router-dom';
+import { LogoBG } from '../../../assets';
 import './blogitem.scss';
 import { Gap } from '../../atoms';
 
